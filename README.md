@@ -15,8 +15,16 @@ npm i @jinntec/jinn-toast
   import 'jinn-toast/jinn-toast.js';
 </script>
 
-<jinn-toast></jinn-toast>
+<jinn-toast text="first toast with defaults"></jinn-toast>
+<jinn-toast text="second toast top left" position="left"></jinn-toast>
+<jinn-toast text="third toast bottom left" position="left" gravity="bottom"></jinn-toast>
+<jinn-toast text="fourth toast bottom left" position="right" gravity="bottom"></jinn-toast>
+<jinn-toast text="warning" duration="5000" data-class="warning" position="right" gravity="bottom"></jinn-toast>
+<jinn-toast text="error" duration="-1" data-class="error" close="true" position="left" gravity="bottom"></jinn-toast>
+
 ```
+
+Most of orginal options are just copied from toastify-js. See their docs for further options.
 
 ## Linting with ESLint, Prettier, and Types
 To scan the project for linting errors, run
