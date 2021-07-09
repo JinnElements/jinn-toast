@@ -28,16 +28,22 @@
 }
 
 .toast-close {
-    opacity: 0.4;
+    opacity: 0.8;
     padding: 0 5px;
 }
 
 .toastify-right {
     right: 15px;
 }
+.toastify-right .toast-close {
+  margin-right:-10px;
+}
 
 .toastify-left {
     left: 15px;
+}
+.toastify-left .toast-close{
+  margin-left:-10px;
 }
 
 .toastify-top {

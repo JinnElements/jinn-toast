@@ -1,5 +1,5 @@
 {
-  "name": "jinn-toast",
+  "name": "@jinntec/jinn-toast",
   "version": "1.0.0",
   "description": "Webcomponent jinn-toast following open-wc recommendations",
   "author": "joern turner",
