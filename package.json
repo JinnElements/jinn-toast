@@ -1,0 +1,75 @@
+{
+  "name": "jinn-toast",
+  "version": "1.0.0",
+  "description": "Webcomponent jinn-toast following open-wc recommendations",
+  "author": "joern turner",
+  "license": "MIT",
+  "main": "index.js",
+  "module": "index.js",
+  "scripts": {
+    "start": "web-dev-server",
+    "lint": "eslint --ext .js,.html . --ignore-path .gitignore && prettier \"**/*.js\" --check --ignore-path .gitignore",
+    "prettier": "prettier \"**/*.js\" --check --ignore-path .gitignore",
+    "format": "eslint --ext .js,.html . --fix --ignore-path .gitignore && prettier \"**/*.js\" --write --ignore-path .gitignore",
+    "test": "web-test-runner --coverage",
+    "test:watch": "web-test-runner --watch"
+  },
+  "files": [
+    "index.js",
+    "jinn-toast.js",
+    "LICENSE",
+    "src/**/*"
+  ],
+  "dependencies": {
+    "lit-html": "^1.4.1",
+    "toastify-js": "^1.11.0"
+  },
+  "devDependencies": {
+    "@open-wc/eslint-config": "^0.3.12",
+    "@open-wc/prettier-config": "^0.1.10",
+    "@open-wc/testing": "^2.5.33",
+    "@web/dev-server": "^0.1.18",
+    "@web/test-runner": "^0.12.20",
+    "eslint": "^7.30.0",
+    "eslint-config-prettier": "^7.2.0",
+    "husky": "^4.3.8",
+    "lint-staged": "^10.5.4",
+    "prettier": "^2.2.1"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@open-wc/eslint-config",
+      "eslint-config-prettier"
+    ],
+    "rules": {
+      "no-console": "off",
+      "import/no-extraneous-dependencies": [
+        "off",
+        {
+          "devDependencies": [
+            "demo/**/*.html",
+            "doc/**/*.html"
+          ]
+        }
+      ],
+      "class-methods-use-this": [
+        "off",
+        {
+          "dependencies": [
+            "src/JinnToast.js"
+          ]
+        }
+      ]
+    }
+  },
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "avoid"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "prettier --write"
+    ]
+  }
+}

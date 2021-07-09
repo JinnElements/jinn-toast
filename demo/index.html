@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <style>
+    body {
+      background: #fafafa;
+    }
+  </style>
+  <link href="../src/toastify.css" rel="stylesheet">
+  <script type="module">
+    import '../jinn-toast.js';
+  </script>
+
+  <style>
+    .warning {
+      background: orange;
+    }
+
+    .error {
+      background: red;
+    }
+  </style>
+</head>
+<body>
+<div id="demo"></div>
+
+<script type="module">
+  import { html, render } from 'lit-html';
+  import '../jinn-toast.js';
+
+  render(
+    html`
+      <jinn-toast text="first toast with defaults"></jinn-toast>
+      <jinn-toast text="second toast top left" position="left"></jinn-toast>
+      <jinn-toast text="third toast bottom left" position="left" gravity="bottom"></jinn-toast>
+      <jinn-toast text="fourth toast bottom left" position="right" gravity="bottom"></jinn-toast>
+      <jinn-toast text="warning" duration="5000" data-class="warning" position="right" gravity="bottom"></jinn-toast>
+      <jinn-toast text="error" duration="-1" data-class="error" close="true" position="left" gravity="bottom"></jinn-toast>
+      `,
+    document.querySelector('#demo')
+  );
+
+  const toasts = document.querySelectorAll('jinn-toast');
+  Array.from(toasts).forEach(toast => {
+    // toast.showToast('hello');
+
+    toast.dispatchEvent(
+      new CustomEvent('jinn-toast', {
+        composed: true,
+        bubbles: true,
+        detail: {
+          text:'hello'
+        },
+      }),
+    );
+
+
+  });
+
+</script>
+
+</body>
+</html>
