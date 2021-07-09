@@ -1,4 +1,4 @@
-import Toastify from '../node_modules/toastify-js/src/toastify-es.js';
+import Toastify from 'toastify-js/src/toastify-es';
 
 /**
  *
@@ -77,10 +77,10 @@ export class JinnToast extends HTMLElement {
   }
 
   showToast(text){
-    Toastify({
+    new Toastify({
       avatar: this.avatar,
       // backgroundColor:this.backgroundColor,
-      callback: this.callback,
+      // callback: this.callback,
       className:this.classProp,
       close: this.close,
       destination: this.destination,
@@ -105,3 +105,4 @@ export class JinnToast extends HTMLElement {
   }
 
 }
+window.customElements.define('jinn-toast', JinnToast);

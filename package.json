@@ -4,6 +4,7 @@
   "description": "Webcomponent jinn-toast following open-wc recommendations",
   "author": "joern turner",
   "license": "MIT",
+  "type": "module",
   "main": "index.js",
   "module": "index.js",
   "publishConfig": {

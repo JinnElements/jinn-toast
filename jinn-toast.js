@@ -1,3 +1,3 @@
 import { JinnToast } from './src/JinnToast.js';
 
-window.customElements.define('jinn-toast', JinnToast);
+// window.customElements.define('jinn-toast', JinnToast);
