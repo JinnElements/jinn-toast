@@ -24,6 +24,24 @@ npm i @jinntec/jinn-toast
 
 ```
 
+To display the toast by API:
+```
+document.getElementById('my-toast').showToast('hello');
+```
+
+Or by dispatching an 'jinn-toast' event to the respective toast element:
+```
+toast.dispatchEvent(
+      new CustomEvent('jinn-toast', {
+        composed: true,
+        bubbles: true,
+        detail: {
+          text:'hello'
+        },
+      }),
+    );
+```
+
 Most of orginal options are just copied from toastify-js. See their docs for further options.
 
 ## Linting with ESLint, Prettier, and Types
