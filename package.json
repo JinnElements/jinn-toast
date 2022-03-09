@@ -3,7 +3,7 @@
   "version": "1.0.2",
   "description": "Webcomponent jinn-toast following open-wc recommendations",
   "author": "joern turner",
-  "license": "MIT",
+  "li cense": "MIT",
   "type": "module",
   "main": "index.js",
   "module": "index.js",
