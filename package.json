@@ -68,7 +68,8 @@
             "src/JinnToast.js"
           ]
         }
-      ]
+      ],
+      "no-unused-vars": "off"
     }
   },
   "prettier": {
