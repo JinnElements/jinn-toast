@@ -76,6 +76,10 @@ export class JinnToast extends HTMLElement {
 
   }
 
+  disconnectedCallback(){
+    this.removeEventListener('jinn-toast',this.showToast);
+  }
+
   showToast(text){
     new Toastify({
       avatar: this.avatar,
@@ -105,4 +109,6 @@ export class JinnToast extends HTMLElement {
   }
 
 }
-window.customElements.define('jinn-toast', JinnToast);
+if (!customElements.get('jinn-toast')) {
+  window.customElements.define('jinn-toast', JinnToast);
+}
