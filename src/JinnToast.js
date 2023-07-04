@@ -45,14 +45,14 @@ export class JinnToast extends HTMLElement {
     this.close = (this._initVar('close', false)) === 'true';
     this.destination = this._initVar('destination', undefined);
     this.duration = Number(this._initVar('duration', 3000));
-    this.escapeMarkup = (this._initVar('escapeMarkup', true)) === 'true';
+    this.escapeMarkup = (this._initVar('escapeMarkup', 'true')) === 'true';
     this.gravity = this._initVar('gravity', 'top');
-    this.newWindow = (this._initVar('newWindow', false)) === 'true';
+    this.newWindow = (this._initVar('newWindow', 'false')) === 'true';
     this.offSet = this._initVar('offSet', {});
-    this.oldestFirst = (this._initVar('oldestFirst', true)) === 'true';
+    this.oldestFirst = (this._initVar('oldestFirst', 'true')) === 'true';
     this.position = this._initVar('position', 'right');
     // this.selector = this._initVar('selector','');
-    this.stopOnFocus = this._initVar('stopOnFocus', true);
+    this.stopOnFocus = (this._initVar('stopOnFocus', 'true')) === 'true';
     this.text = this._initVar('text', '');
 
     const style = `
