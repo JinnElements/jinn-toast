@@ -42,6 +42,21 @@ toast.dispatchEvent(
     );
 ```
 
+Per-toast options override the attributes of the element for one toast: `gravity`, `position`,
+`className` (added to `data-class`), `duration` and `close`:
+```
+toast.showToast('hello', { gravity: 'top', position: 'center', className: 'banner', close: true });
+```
+The same works via the event, as `detail: { text: 'hello', options: { … } }`.
+
+## Accessibility
+- Every `jinn-toast` contains a visually hidden live region that exists before any toast is shown, and
+  each toast's text is announced through it. It is `role="status"` / `aria-live="polite"` by default;
+  use `politeness="assertive"` for urgent toasts such as errors (`role="alert"`).
+- The close control is a focusable button (`role="button"`, `tabindex="0"`, Enter/Space), named by
+  the `close-label` attribute (default `Close`, set it to localise).
+- The toast itself is not a live region, so text is not announced twice.
+
 Most of orginal options are just copied from toastify-js. See their docs for further options.
 
 ## Linting with ESLint, Prettier, and Types
